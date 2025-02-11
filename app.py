@@ -81,13 +81,8 @@ def get_response(user_input):
     chat_history.append(AIMessage(content=response.content))
     return response.content
 
-# # API Endpoint
-# @app.post("/api/chat")
-# async def chat_endpoint(chat_request: ChatRequest):
-#     response = get_response(chat_request.message)
-#     return {"answer": response}
-
-@app.post("/api/chat")  # Only accepts POST requests
+# API Endpoint
+@app.post("/api/chat")
 async def chat_endpoint(chat_request: ChatRequest):
     response = get_response(chat_request.message)
     return {"answer": response}
