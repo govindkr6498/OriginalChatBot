@@ -140,12 +140,13 @@
       const userMessageText = userInput.value;
       userInput.value = '';
   
+      // http://3.86.216.100:8000/api/chat
       // Call the API
       try {
         const response = await fetch('http://3.86.216.100:8000/api/chat', {
-            method: 'POST',
+            method: 'POST',  // ✅ Correct
             headers: {
-              'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({ message: userMessageText }),
         });
